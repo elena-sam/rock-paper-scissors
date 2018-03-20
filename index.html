@@ -22,9 +22,9 @@
           if (computerSelection == "rock") {
             return "Rock vs Rock: No Winner this time!";
           } else if (computerSelection == "paper") {
-            return "We\'re sorry... Computer wins!";
+            return "Paper beats Rock; Computer wins!";
           } else {
-          return "You Win! Rock beats Scissors!";
+            return "You Win! Rock beats Scissors!";
           }
         } else if (playerSelection.toLowerCase() == "paper") {
           if (computerSelection == "rock") {
@@ -32,23 +32,58 @@
           } else if (computerSelection == "paper") {
             return "Paper vs Paper: No Winner this time!";
           } else {
-            return "We\'re sorry... Computer wins!";
+            return "Scissors beats Paper; Computer wins!";
           }
         } else if (playerSelection.toLowerCase() == "scissors") {
           if (computerSelection == "rock") {
-            return "We\'re sorry... Computer wins!";
+            return "Rock beats Scissors; Computer wins!";
           } else if (computerSelection == "scissors") {
             return "Scissors vs Scissors: No Winner this time!";
           } else {
             return "You Win! Scissors beats Paper!";
           }
+        } else {
+          return "No value entered; Computer won this round";
         }
       }
 
-      const playerSelection = prompt("Rock, Paper, or Scissors?");
-      const computerSelection = computerPlay();
+      function game() {
+        let i;
+        let scorePlayer = 0;
+        let scoreComputer = 0;
 
-      console.log(playRound(playerSelection, computerSelection));
+        for (i = 0; i < 5; i++) {
+
+          let playerSelection = prompt("Rock, Paper, or Scissors?");
+          const computerSelection = computerPlay();
+
+          console.log(playRound(playerSelection, computerSelection));
+
+          if (playerSelection == computerSelection) {
+            scorePlayer = scorePlayer;
+            scoreComputer = scoreComputer;
+          } else if ((playerSelection.toLowerCase() == "paper") && (computerSelection == "rock") || (playerSelection.toLowerCase() == "rock") && (computerSelection == "scissors") || (playerSelection.toLowerCase() == "paper") && (computerSelection == "rock")) {
+            scorePlayer = ++scorePlayer;
+          } else {
+            scoreComputer = ++scoreComputer;
+          }
+
+          console.log("Score: You = " + scorePlayer + " | Computer = " + scoreComputer);
+        }
+
+        if (scorePlayer === scoreComputer) {
+          return "It\'s a tie!";
+        } else if (scorePlayer > scoreComputer) {
+          return "You Won!";
+        } else {
+          return "Computer won, but don\'t give up! Give it another try!";
+        }
+      }
+
+
+
+
+      console.log(game());
 
     </script>
 
