@@ -1,10 +1,10 @@
-#Project Title
+# Project Title
 
 Rock Paper Scissors
 
 From The Odin Project: Web Development 101
 
-##Description
+## Description
 
 The instructions for this assignment can be found here:
 https://www.theodinproject.com/courses/web-development-101/lessons/rock-paper-scissors
@@ -18,11 +18,11 @@ The aim is to make a simple implementation of “rock paper scissors” with Jav
 - A `for` loop was put inside the `game()` function, in order to play 5 rounds. Each time, the user is asked to enter a value (`prompt`).
 - After 5 rounds, scores are compared, and a message is displayed to reveal the winner.
 
-##Built With the Help of
+## Built With the Help of
 
 Atom 1.24.0
 Chrome's Console
 
-##Author
+## Author
 
 elena-sam
